@@ -1,0 +1,6 @@
+framework module Pods_TMDB_AssignmentTests {
+  umbrella header "Pods-TMDB AssignmentTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

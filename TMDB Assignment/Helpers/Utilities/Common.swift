@@ -10,4 +10,7 @@ import Photos
 
 class Common: NSObject {
     
+    static func getPosterPath(path: String) -> String {
+        return posterURL + path
+    }
 }

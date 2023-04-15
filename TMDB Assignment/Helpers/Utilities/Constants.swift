@@ -47,8 +47,19 @@ struct Fonts {
 }
 
 struct Icons {
+    static let RECTANGLE_PLACEHOLDER = UIImage(named: "rectangle_placeholder")
 
     
+}
+
+struct Colors {
+    static let BLACK = UIColor(named: "black")!
+    static let LIGHT_WHITE = UIColor(named: "light_white_color")!
+    static let WHITE = UIColor(named: "white")!
+    static let LIGHT_GREY = UIColor(named: "light_gray")!
+    static let SEPARATOR_COLOR = UIColor(named: "textfield_line_color")!
+    static let GRAY = UIColor(named: "textfield_line_color")!
+    static let DARK_GRAY = UIColor(named: "dark_gray")!
 }
 
 struct K {

@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import MBProgressHUD
 
 extension UIViewController {
     func alertMessage(title: String, alertMessage:String, action: (() -> Void)?)
@@ -16,7 +17,7 @@ extension UIViewController {
         }
         
         DispatchQueue.main.async {
-//            self.hideProgressHud()
+            self.hideProgressHud()
             
             var str = ""
             if alertMessage.isEmpty {
@@ -34,4 +35,16 @@ extension UIViewController {
             self.present(myAlert, animated:true, completion:nil)
         }
     }
+    
+    func showProgressHud(title:String = K.LOADING_KEY) -> Void {
+        let progressHud = MBProgressHUD.showAdded(to: view, animated: true)
+        progressHud.label.text = title
+    }
+    
+    func hideProgressHud() -> Void {
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view , animated: true)
+        }
+    }
+    
 }

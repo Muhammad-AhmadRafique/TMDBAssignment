@@ -41,6 +41,8 @@
 		66760D7429EAAA40003755DA /* MoviesListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66760D7229EAAA40003755DA /* MoviesListCollectionViewCell.xib */; };
 		66760D7629EAAEB0003755DA /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66760D7529EAAEB0003755DA /* CustomViews.swift */; };
 		66760D7829EAB05F003755DA /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66760D7729EAB05F003755DA /* Date+Extension.swift */; };
+		66760D7D29EAB983003755DA /* LocalDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66760D7C29EAB983003755DA /* LocalDB.swift */; };
+		66760D7F29EAB9F7003755DA /* FavoriteMoviesListDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66760D7E29EAB9F7003755DA /* FavoriteMoviesListDB.swift */; };
 		9CBA866862F87AFE30B18668 /* Pods_TMDB_AssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6B33C1603D29298F7250CB /* Pods_TMDB_AssignmentTests.framework */; };
 		C94462109254F5C31C71ABFB /* Pods_TMDB_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C832D5F2D19871AFCDFBF1BD /* Pods_TMDB_Assignment.framework */; };
 		FA17FCA4EB6DC60F56E7C469 /* Pods_TMDB_Assignment_TMDB_AssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EC7712FD1D90710F400E1F /* Pods_TMDB_Assignment_TMDB_AssignmentUITests.framework */; };
@@ -103,6 +105,8 @@
 		66760D7229EAAA40003755DA /* MoviesListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesListCollectionViewCell.xib; sourceTree = "<group>"; };
 		66760D7529EAAEB0003755DA /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
 		66760D7729EAB05F003755DA /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		66760D7C29EAB983003755DA /* LocalDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDB.swift; sourceTree = "<group>"; };
+		66760D7E29EAB9F7003755DA /* FavoriteMoviesListDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMoviesListDB.swift; sourceTree = "<group>"; };
 		70EA5B5A93C1EE6E47A53AAE /* Pods-TMDB Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB Assignment.debug.xcconfig"; path = "Target Support Files/Pods-TMDB Assignment/Pods-TMDB Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		75EFC23B735BE11F1868054F /* Pods-TMDB Assignment-TMDB AssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB Assignment-TMDB AssignmentUITests.debug.xcconfig"; path = "Target Support Files/Pods-TMDB Assignment-TMDB AssignmentUITests/Pods-TMDB Assignment-TMDB AssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8915A93003AE7DD1A26C0296 /* Pods-TMDB AssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB AssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-TMDB AssignmentTests/Pods-TMDB AssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -237,8 +241,9 @@
 		66760D2229EA7C62003755DA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				66760D7B29EAB975003755DA /* DB Layer */,
 				66760D5A29EA8539003755DA /* Extensions */,
-				66760D4729EA8340003755DA /* Network */,
+				66760D4729EA8340003755DA /* Network Layer */,
 				66760D3A29EA80C0003755DA /* Utilities */,
 				66760D2529EA7CA7003755DA /* Resources */,
 			);
@@ -409,7 +414,7 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		66760D4729EA8340003755DA /* Network */ = {
+		66760D4729EA8340003755DA /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
 				66760D4829EA834C003755DA /* C-URL+Credentials.swift */,
@@ -417,7 +422,7 @@
 				66760D4A29EA834D003755DA /* NetworkService.swift */,
 				66760D4929EA834C003755DA /* ReachabilityTest.swift */,
 			);
-			path = Network;
+			path = "Network Layer";
 			sourceTree = "<group>";
 		};
 		66760D5A29EA8539003755DA /* Extensions */ = {
@@ -432,6 +437,15 @@
 				66760D7729EAB05F003755DA /* Date+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		66760D7B29EAB975003755DA /* DB Layer */ = {
+			isa = PBXGroup;
+			children = (
+				66760D7C29EAB983003755DA /* LocalDB.swift */,
+				66760D7E29EAB9F7003755DA /* FavoriteMoviesListDB.swift */,
+			);
+			path = "DB Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -677,6 +691,7 @@
 			files = (
 				66760D5929EA84DB003755DA /* GeneralModels.swift in Sources */,
 				66760D5229EA834F003755DA /* NetworkService.swift in Sources */,
+				66760D7F29EAB9F7003755DA /* FavoriteMoviesListDB.swift in Sources */,
 				66760D4529EA811E003755DA /* Router.swift in Sources */,
 				66760D5C29EA8548003755DA /* Encodable+Extension.swift in Sources */,
 				66760D6229EA8E03003755DA /* UIViewController+Extension.swift in Sources */,
@@ -696,6 +711,7 @@
 				66760CF129EA7984003755DA /* AppDelegate.swift in Sources */,
 				66760CF329EA7984003755DA /* SceneDelegate.swift in Sources */,
 				66760D2829EA7E22003755DA /* MoviesListViewController.swift in Sources */,
+				66760D7D29EAB983003755DA /* LocalDB.swift in Sources */,
 				66760D4229EA811E003755DA /* ENUMs.swift in Sources */,
 				66760D4329EA811E003755DA /* Common.swift in Sources */,
 				66760D7629EAAEB0003755DA /* CustomViews.swift in Sources */,

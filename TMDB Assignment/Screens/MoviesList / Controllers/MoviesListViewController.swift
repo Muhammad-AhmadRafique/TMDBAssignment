@@ -25,7 +25,7 @@ class MoviesListViewController: UIViewController {
 
         fetchMovies()
     }
-
+    
 }
 
 extension MoviesListViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -40,10 +40,18 @@ extension MoviesListViewController : UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MoviesListCollectionViewCell.className, for: indexPath) as! MoviesListCollectionViewCell
-        cell.configureCell(model: moviesList[indexPath.row])
+        let model = moviesList[indexPath.row]
+        cell.configureCell(model: model)
+        cell.favoriteBtnTapped = {
+            self.makeFavorite(model: model)
+        }
         return cell
     }
     
+    private func makeFavorite(model: MovieModel) {
+        LocalDB.shared.markFavorite(model: model)
+        self.collectionView.reloadData()      
+    }
 }
 
 extension MoviesListViewController {

@@ -16,7 +16,7 @@ class ModeSelection {
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 if let delegate = windowScene.delegate as? SceneDelegate {
                     if let window = delegate.window {
-                        let rootVC = Storyboards.MAIN.instantiateViewController(withIdentifier: MoviesListViewController.className)
+                        let rootVC = Storyboards.MAIN.instantiateViewController(withIdentifier: NavigationController.className)
                         window.rootViewController = rootVC
                         window.makeKeyAndVisible()
                     }

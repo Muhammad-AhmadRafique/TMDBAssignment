@@ -58,7 +58,7 @@ class LocalDB {
     }
 
     func getFavoritesList() -> [MovieModel] {
-        return self.favoritesList
+        return self.favoritesList.filter({$0.isFavorite ?? false})
     }
     
     func checkIsFavorite(model: MovieModel) -> Bool {

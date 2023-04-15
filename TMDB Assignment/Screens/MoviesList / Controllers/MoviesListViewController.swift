@@ -21,9 +21,15 @@ class MoviesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "Movies List"
         collectionView.register(UINib(nibName: MoviesListCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: MoviesListCollectionViewCell.className)
 
         fetchMovies()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
     }
     
 }
@@ -48,9 +54,14 @@ extension MoviesListViewController : UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        Router.shared.openMovieDetailViewController(model: moviesList[indexPath.row], controller: self)
+        Router.shared.openFavoriteMoviesViewController(controller: self)
+    }
+    
     private func makeFavorite(model: MovieModel) {
         LocalDB.shared.markFavorite(model: model)
-        self.collectionView.reloadData()      
+        self.collectionView.reloadData()
     }
 }
 

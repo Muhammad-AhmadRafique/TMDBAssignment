@@ -6,19 +6,24 @@
 //
 
 import UIKit
-//import AVFoundation
-import Photos
 
 class Router {
     
     static let shared = Router()
     
-//    func openNotificationViewController(controller:UIViewController) -> Void {
-//        let control = Storyboards.PROFILE.instantiateViewController(withIdentifier: NotificationViewController.className) as! NotificationViewController
-//        control.addBackButtonOnly()
-//        controller.show(control, sender: self)
-//    }
-//
+    func openMovieDetailViewController(model: MovieModel?, controller:UIViewController) -> Void {
+        let control = Storyboards.MAIN.instantiateViewController(withIdentifier: MovieDetailViewController.className) as! MovieDetailViewController
+        control.movie = model
+        control.addBackButtonOnly()
+        controller.show(control, sender: self)
+    }
+    
+    func openFavoriteMoviesViewController(controller:UIViewController) -> Void {
+        let control = Storyboards.MAIN.instantiateViewController(withIdentifier: FavoriteMoviesViewController.className) as! FavoriteMoviesViewController
+        control.addBackButtonOnly()
+        controller.show(control, sender: self)
+    }
+
     
     
     

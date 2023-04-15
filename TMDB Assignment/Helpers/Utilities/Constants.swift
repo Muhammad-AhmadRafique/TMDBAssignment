@@ -50,7 +50,7 @@ struct Icons {
     static let RECTANGLE_PLACEHOLDER = UIImage(named: "rectangle_placeholder")
     static let FAVORITE = UIImage(named: "favorite_icon")
     static let UNFAVORITE = UIImage(named: "unfavorite_icon")
-
+    static let BACK_ARROW_BACK_ICON = UIImage(named: "back_arrow_black_icon")
     
 }
 

@@ -10,10 +10,10 @@ import UIKit
 class FavoriteMoviesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noFavoritesLbl: RegularBlackLabel!
     
     private var moviesList = [MovieModel]() {
         didSet {
-//            tableView.reloadSections(IndexSet(integersIn: 0...moviesList.count - 1), with: .top)
             tableView.reloadData()
         }
     }
@@ -34,7 +34,6 @@ extension FavoriteMoviesViewController : UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return moviesList.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteMoviesListTableViewCell.className) as! FavoriteMoviesListTableViewCell
@@ -58,5 +57,6 @@ extension FavoriteMoviesViewController : UITableViewDelegate, UITableViewDataSou
 extension FavoriteMoviesViewController {
     private func fetchMovies() {
         moviesList = LocalDB.shared.getFavoritesList()
+        noFavoritesLbl.isHidden = !(moviesList.count == 0)
     }
 }

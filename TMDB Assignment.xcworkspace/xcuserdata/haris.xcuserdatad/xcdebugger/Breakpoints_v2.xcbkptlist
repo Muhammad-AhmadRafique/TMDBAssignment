@@ -3,4 +3,22 @@
    uuid = "B6A19D64-5D2B-4453-8318-FF3E4BF4934E"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F128F284-0210-4402-801C-666D5C5BD840"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TMDB Assignment/Screens/MoviesList / Controllers/MoviesListViewController.swift"
+            startingColumnNumber = "136"
+            endingColumnNumber = "136"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -13,9 +13,12 @@ class MoviesListViewController: UIViewController {
     
     private var moviesList = [MovieModel]() {
         didSet {
+//            collectionView.reloadSections(IndexSet(integersIn: 0...0))
             collectionView.reloadData()
         }
     }
+    private var isLoading = false
+    private var page = 1
     
     // MARK: - View life cycle
     override func viewDidLoad() {
@@ -55,20 +58,45 @@ extension MoviesListViewController : UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        Router.shared.openMovieDetailViewController(model: moviesList[indexPath.row], controller: self)
-        Router.shared.openFavoriteMoviesViewController(controller: self)
+        Router.shared.openMovieDetailViewController(model: moviesList[indexPath.row], controller: self)
+//        Router.shared.openFavoriteMoviesViewController(controller: self)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if collectionView.contentOffset.y >= (collectionView.contentSize.height - collectionView.frame.size.height) {
+            updateSkipTakeDataOnScroll()
+        }
+    }
+    
+    private func skipTakeImplementation(responseArray: [MovieModel]) {
+        if moviesList.count > 0 && page != 1 {
+            for obj in responseArray {
+                moviesList.append(obj)
+            }
+        } else {
+            moviesList = responseArray
+        }
+        isLoading = responseArray.count == 0
+    }
+    
+    func updateSkipTakeDataOnScroll() {
+        if !self.isLoading {
+            self.isLoading = true
+            self.page += 1
+            self.fetchMovies()
+        }
     }
     
     private func makeFavorite(model: MovieModel) {
         LocalDB.shared.markFavorite(model: model)
-        self.collectionView.reloadData()
+        collectionView.reloadData()
     }
 }
 
 extension MoviesListViewController {
     private func fetchMovies() {
         showProgressHud()
-        let url = API.movies
+        let url = API.movies + "&page=" + "\(page)"
         APIGeneric<GetPopularMoviesResponseModel>.fetchRequest(apiURL: url) { [weak self]
             (result) in
             guard let `self`  = self else { return }
@@ -76,7 +104,8 @@ extension MoviesListViewController {
                 self.hideProgressHud()
                 switch result {
                 case .success(let responseModel):
-                    self.moviesList = responseModel.results ?? []
+                    let list = responseModel.results ?? []
+                    self.skipTakeImplementation(responseArray: list)
                 case .failure(let error):
                     let err = CustomError(description: (error as? CustomError)?.description ?? "")
                     self.alertMessage(title: K.ERROR, alertMessage: err.description ?? "", action: nil)

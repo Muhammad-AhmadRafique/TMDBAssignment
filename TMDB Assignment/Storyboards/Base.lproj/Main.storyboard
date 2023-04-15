@@ -125,6 +125,9 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="unfavorite_icon"/>
+                                                <connections>
+                                                    <action selector="favoriteButtonWasPressed:" destination="KcM-ZS-3jW" eventType="touchUpInside" id="Vic-Z6-Kij"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -169,18 +172,27 @@
                                     <outlet property="delegate" destination="mPf-J0-Ddx" id="UKQ-JR-8Hf"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Favorites...!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27Z-XA-bh6" customClass="RegularBlackLabel" customModule="TMDB_Assignment" customModuleProvider="target">
+                                <rect key="frame" x="138.33333333333334" y="411.66666666666669" width="113.66666666666666" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="atI-cY-VaT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="atI-cY-VaT" firstAttribute="trailing" secondItem="Bmi-Zs-4pj" secondAttribute="trailing" id="Nwg-ck-98u"/>
+                            <constraint firstItem="27Z-XA-bh6" firstAttribute="centerX" secondItem="UZv-jc-fck" secondAttribute="centerX" id="Wtu-69-mgb"/>
                             <constraint firstItem="Bmi-Zs-4pj" firstAttribute="leading" secondItem="atI-cY-VaT" secondAttribute="leading" id="XK5-wn-vNf"/>
                             <constraint firstItem="atI-cY-VaT" firstAttribute="bottom" secondItem="Bmi-Zs-4pj" secondAttribute="bottom" id="hJH-EO-kCB"/>
                             <constraint firstItem="Bmi-Zs-4pj" firstAttribute="top" secondItem="atI-cY-VaT" secondAttribute="top" id="sLL-lG-jUs"/>
+                            <constraint firstItem="27Z-XA-bh6" firstAttribute="centerY" secondItem="UZv-jc-fck" secondAttribute="centerY" id="yXz-td-Wt2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HBR-Ol-bHs"/>
                     <connections>
+                        <outlet property="noFavoritesLbl" destination="27Z-XA-bh6" id="cRz-Wz-fW8"/>
                         <outlet property="tableView" destination="Bmi-Zs-4pj" id="zl6-vf-mJn"/>
                     </connections>
                 </viewController>

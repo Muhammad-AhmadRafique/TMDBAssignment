@@ -20,9 +20,19 @@ class MovieDetailViewController: UIViewController {
     // MARK: - View Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Movie Details"
         setupView()
     }
     
+    //MARK: - IBActions
+    @IBAction func favoriteButtonWasPressed(_ sender: Any) {
+        if let m = movie {
+            LocalDB.shared.markFavorite(model: m)
+            setupView()
+        }
+    }
+    
+    //MARK: - Helper Methods
     private func setupView() {
         if let model = movie {
             titleLbl.text = model.title

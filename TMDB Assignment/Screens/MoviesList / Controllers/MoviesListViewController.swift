@@ -35,6 +35,9 @@ class MoviesListViewController: UIViewController {
         collectionView.reloadData()
     }
     
+    @IBAction func favoritesButtonWasPressed(_ sender: Any) {
+        Router.shared.openFavoriteMoviesViewController(controller: self)
+    }
 }
 
 extension MoviesListViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -59,7 +62,6 @@ extension MoviesListViewController : UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         Router.shared.openMovieDetailViewController(model: moviesList[indexPath.row], controller: self)
-//        Router.shared.openFavoriteMoviesViewController(controller: self)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

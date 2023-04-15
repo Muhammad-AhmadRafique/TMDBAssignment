@@ -28,7 +28,7 @@ class MovieDetailViewController: UIViewController {
     @IBAction func favoriteButtonWasPressed(_ sender: Any) {
         if let m = movie {
             LocalDB.shared.markFavorite(model: m)
-            setupView()
+            checkFavorite(model: m)
         }
     }
     

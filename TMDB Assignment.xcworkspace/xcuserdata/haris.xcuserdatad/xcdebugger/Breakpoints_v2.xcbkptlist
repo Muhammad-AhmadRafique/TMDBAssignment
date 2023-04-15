@@ -16,8 +16,8 @@
             endingColumnNumber = "136"
             startingLineNumber = "51"
             endingLineNumber = "51"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
+            landmarkName = "MoviesListViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

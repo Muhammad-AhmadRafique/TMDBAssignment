@@ -24,24 +24,24 @@
                                 <rect key="frame" x="8" y="8" width="233" height="166"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Owc-w9-gOT" customClass="RoundedPhotoView" customModule="TMDB_Assignment" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="233" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="233" height="120"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="Nge-53-iaB"/>
+                                            <constraint firstAttribute="height" constant="120" id="Nge-53-iaB"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="q7o-aG-SBy">
-                                        <rect key="frame" x="0.0" y="104" width="233" height="62"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q7o-aG-SBy">
+                                        <rect key="frame" x="0.0" y="124" width="233" height="42"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDl-xM-NBV" customClass="RegularBlackLabel" customModule="TMDB_Assignment" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="233" height="39"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="233" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbm-fr-OGb" customClass="RegularGrayLabel" customModule="TMDB_Assignment" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="41" width="233" height="21"/>
+                                                <rect key="frame" x="0.0" y="25" width="233" height="17"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="foQ-6C-ALm"/>
+                                                    <constraint firstAttribute="height" constant="17" id="foQ-6C-ALm"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>

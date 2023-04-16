@@ -23,6 +23,7 @@ class FavoriteMoviesViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Favorites"
 
+        tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: FavoriteMoviesListTableViewCell.className, bundle: nil), forCellReuseIdentifier: FavoriteMoviesListTableViewCell.className)
         
         fetchMovies()

@@ -21,6 +21,7 @@ class SearchViewController: UIViewController, SearchViewModelDelegate {
         super.viewDidLoad()
         navigationItem.title = "Search"
 
+        tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: FavoriteMoviesListTableViewCell.className, bundle: nil), forCellReuseIdentifier: FavoriteMoviesListTableViewCell.className)
         tableView.register(UINib(nibName: SuggestionsTableViewCell.className, bundle: nil), forCellReuseIdentifier: SuggestionsTableViewCell.className)
 

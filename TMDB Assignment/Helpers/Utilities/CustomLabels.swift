@@ -12,7 +12,7 @@ class RegularBlackLabel: UILabel {
     
     func setupView() {
         textColor = Colors.BLACK
-        font = Fonts.HELVETICA_REGULAR_17
+        font = Fonts.HELVETICA_REGULAR_15
     }
     
     override init(frame: CGRect) {

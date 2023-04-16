@@ -23,7 +23,6 @@ class MoviesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        navigationItem.title = "Movies List"
         collectionView.register(UINib(nibName: MoviesListCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: MoviesListCollectionViewCell.className)
 
         fetchMovies()
@@ -34,6 +33,7 @@ class MoviesListViewController: UIViewController {
         collectionView.reloadData()
     }
         
+    //MARK: - IBActions
     @IBAction func favoritesButtonWasPressed(_ sender: Any) {
         Router.shared.openFavoriteMoviesViewController(controller: self)
     }
@@ -42,6 +42,7 @@ class MoviesListViewController: UIViewController {
     }
 }
 
+//MARK: - UICollectionView Delegates
 extension MoviesListViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: collectionView.frame.width/2, height: 200)
@@ -62,10 +63,16 @@ extension MoviesListViewController : UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
+    private func makeFavorite(model: MovieModel) {
+        LocalDB.shared.markFavorite(model: model)
+        collectionView.reloadData()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         Router.shared.openMovieDetailViewController(model: moviesList[indexPath.row], controller: self)
     }
     
+    //MARK: - Pagination Logic
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if collectionView.contentOffset.y >= (collectionView.contentSize.height - collectionView.frame.size.height) {
             updateSkipTakeDataOnScroll()
@@ -91,12 +98,9 @@ extension MoviesListViewController : UICollectionViewDelegate, UICollectionViewD
         }
     }
     
-    private func makeFavorite(model: MovieModel) {
-        LocalDB.shared.markFavorite(model: model)
-        collectionView.reloadData()
-    }
 }
 
+//MARK: - APIs
 extension MoviesListViewController {
     private func fetchMovies() {
         showProgressHud()

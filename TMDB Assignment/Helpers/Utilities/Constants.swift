@@ -11,6 +11,8 @@ import Foundation
 import Foundation
 import UIKit
 
+let screenBounds = UIScreen.main.bounds
+
 struct Storyboards {
     static let MAIN = UIStoryboard(name: "Main", bundle: nil)
     static let POPUPS = UIStoryboard(name: "Popups", bundle: nil)

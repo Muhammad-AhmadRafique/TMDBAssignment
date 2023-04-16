@@ -274,7 +274,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vYK-VF-Jxj">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vYK-VF-Jxj">
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" placeholder="Search here...!" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INw-Su-p1e">
@@ -288,9 +288,9 @@
                                         </connections>
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yct-U4-i21">
-                                        <rect key="frame" x="0.0" y="60" width="390" height="703"/>
+                                        <rect key="frame" x="0.0" y="40" width="390" height="723"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                         <connections>
                                             <outlet property="dataSource" destination="EtK-KP-0Qu" id="s3L-yr-kAB"/>
                                             <outlet property="delegate" destination="EtK-KP-0Qu" id="FTj-g8-s2w"/>

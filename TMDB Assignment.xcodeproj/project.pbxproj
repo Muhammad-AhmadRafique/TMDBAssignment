@@ -330,7 +330,7 @@
 		66760D2E29EA7F87003755DA /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				66D3283229EBD410009D8A36 /* ViewModel */,
+				66D3283229EBD410009D8A36 /* ViewModels */,
 				66760D3129EA7FA2003755DA /* Models */,
 				66760D3029EA7F9D003755DA /* Views */,
 				66760D2F29EA7F97003755DA /* Controllers */,
@@ -488,13 +488,13 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		66D3283229EBD410009D8A36 /* ViewModel */ = {
+		66D3283229EBD410009D8A36 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				66D3283329EBD41D009D8A36 /* SearchViewModel.swift */,
 				66D3283B29EBF433009D8A36 /* SuggestionsViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

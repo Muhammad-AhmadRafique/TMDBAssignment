@@ -41,13 +41,7 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
     }
     
     private func setDate(dateStr: String?) {
-        if let date = dateStr {
-            let str = date + "T00:00:00"
-            dateLbl.text = str.getLocalDate().timeAgoSinceDate()
-        } else {
-            dateLbl.text = Date().convertTimeToUTC().getLocalDate().timeAgoSinceDate()
-        }
-       
+        dateLbl.text = Common.getReleaseDate(dateStr: dateStr)
     }
     
     private func checkFavorite(model: MovieModel) {

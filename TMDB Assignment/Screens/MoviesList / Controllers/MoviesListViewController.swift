@@ -13,7 +13,6 @@ class MoviesListViewController: UIViewController {
     
     private var moviesList = [MovieModel]() {
         didSet {
-//            collectionView.reloadSections(IndexSet(integersIn: 0...0))
             collectionView.reloadData()
         }
     }
@@ -24,7 +23,7 @@ class MoviesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Movies List"
+//        navigationItem.title = "Movies List"
         collectionView.register(UINib(nibName: MoviesListCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: MoviesListCollectionViewCell.className)
 
         fetchMovies()
@@ -34,9 +33,12 @@ class MoviesListViewController: UIViewController {
         super.viewWillAppear(animated)
         collectionView.reloadData()
     }
-    
+        
     @IBAction func favoritesButtonWasPressed(_ sender: Any) {
         Router.shared.openFavoriteMoviesViewController(controller: self)
+    }
+    @IBAction func searchButtonWasPressed(_ sender: Any) {
+        Router.shared.openSearchViewController(controller: self)
     }
 }
 

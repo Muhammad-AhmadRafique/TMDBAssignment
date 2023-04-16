@@ -24,6 +24,13 @@ class Router {
         controller.show(control, sender: self)
     }
 
+    func openSearchViewController(controller:UIViewController) -> Void {
+        let control = Storyboards.MAIN.instantiateViewController(withIdentifier: SearchViewController.className) as! SearchViewController
+        control.addBackButtonOnly()
+        controller.show(control, sender: self)
+    }
+    
+    
     
     
     

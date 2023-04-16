@@ -47,6 +47,9 @@
 		66760D8729EADB99003755DA /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66760D8629EADB99003755DA /* NavigationController.swift */; };
 		66760D8929EAE93B003755DA /* FavoriteMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66760D8829EAE93B003755DA /* FavoriteMoviesViewController.swift */; };
 		66760D8B29EAEEDF003755DA /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66760D8A29EAEEDF003755DA /* UITableView+Extension.swift */; };
+		66D3283129EBD208009D8A36 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D3283029EBD208009D8A36 /* SearchViewController.swift */; };
+		66D3283429EBD41D009D8A36 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D3283329EBD41D009D8A36 /* SearchViewModel.swift */; };
+		66D3283629EBD54C009D8A36 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D3283529EBD54C009D8A36 /* URLSession+Extension.swift */; };
 		9CBA866862F87AFE30B18668 /* Pods_TMDB_AssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6B33C1603D29298F7250CB /* Pods_TMDB_AssignmentTests.framework */; };
 		C94462109254F5C31C71ABFB /* Pods_TMDB_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C832D5F2D19871AFCDFBF1BD /* Pods_TMDB_Assignment.framework */; };
 		FA17FCA4EB6DC60F56E7C469 /* Pods_TMDB_Assignment_TMDB_AssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EC7712FD1D90710F400E1F /* Pods_TMDB_Assignment_TMDB_AssignmentUITests.framework */; };
@@ -115,6 +118,9 @@
 		66760D8629EADB99003755DA /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		66760D8829EAE93B003755DA /* FavoriteMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMoviesViewController.swift; sourceTree = "<group>"; };
 		66760D8A29EAEEDF003755DA /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		66D3283029EBD208009D8A36 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		66D3283329EBD41D009D8A36 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		66D3283529EBD54C009D8A36 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		70EA5B5A93C1EE6E47A53AAE /* Pods-TMDB Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB Assignment.debug.xcconfig"; path = "Target Support Files/Pods-TMDB Assignment/Pods-TMDB Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		75EFC23B735BE11F1868054F /* Pods-TMDB Assignment-TMDB AssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB Assignment-TMDB AssignmentUITests.debug.xcconfig"; path = "Target Support Files/Pods-TMDB Assignment-TMDB AssignmentUITests/Pods-TMDB Assignment-TMDB AssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8915A93003AE7DD1A26C0296 /* Pods-TMDB AssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB AssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-TMDB AssignmentTests/Pods-TMDB AssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -316,6 +322,7 @@
 		66760D2E29EA7F87003755DA /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				66D3283229EBD410009D8A36 /* ViewModel */,
 				66760D3129EA7FA2003755DA /* Models */,
 				66760D3029EA7F9D003755DA /* Views */,
 				66760D2F29EA7F97003755DA /* Controllers */,
@@ -326,6 +333,7 @@
 		66760D2F29EA7F97003755DA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				66D3283029EBD208009D8A36 /* SearchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -447,6 +455,7 @@
 				66760D6F29EAA931003755DA /* UIView+Extension.swift */,
 				66760D7729EAB05F003755DA /* Date+Extension.swift */,
 				66760D8A29EAEEDF003755DA /* UITableView+Extension.swift */,
+				66D3283529EBD54C009D8A36 /* URLSession+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -466,6 +475,14 @@
 				66760D8329EAD86A003755DA /* Router.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		66D3283229EBD410009D8A36 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				66D3283329EBD41D009D8A36 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -721,8 +738,11 @@
 				66760D5E29EA8642003755DA /* NSObject+Extension.swift in Sources */,
 				66760D6E29EAA901003755DA /* CustomImageViews.swift in Sources */,
 				66760D7029EAA931003755DA /* UIView+Extension.swift in Sources */,
+				66D3283129EBD208009D8A36 /* SearchViewController.swift in Sources */,
 				66760D6C29EAA785003755DA /* UIImageView+Extension.swift in Sources */,
+				66D3283429EBD41D009D8A36 /* SearchViewModel.swift in Sources */,
 				66760D5129EA834F003755DA /* ReachabilityTest.swift in Sources */,
+				66D3283629EBD54C009D8A36 /* URLSession+Extension.swift in Sources */,
 				66760D6729EA9F9C003755DA /* FavoriteMoviesListTableViewCell.swift in Sources */,
 				66760D5029EA834F003755DA /* C-URL+Credentials.swift in Sources */,
 				66760D7829EAB05F003755DA /* Date+Extension.swift in Sources */,

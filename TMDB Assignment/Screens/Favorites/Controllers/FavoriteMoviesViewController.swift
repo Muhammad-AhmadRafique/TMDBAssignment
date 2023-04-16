@@ -45,6 +45,7 @@ extension FavoriteMoviesViewController : UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.removeSelection()
         Router.shared.openMovieDetailViewController(model: moviesList[indexPath.row], controller: self)
     }
     

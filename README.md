@@ -9,7 +9,7 @@ You can see the list of popular movies, view the details of any movie, mark them
     •    Favorite Movies
 
 # Documentation
-You can see the documentation here.
+You can see the documentation [here](https://docs.google.com/document/d/1Yr83OzZ6onxWy2D_aq28s0_cVm9niGmrFBRdTVLlzyM/edit?usp=sharing).
 
 # Folder Structure
 

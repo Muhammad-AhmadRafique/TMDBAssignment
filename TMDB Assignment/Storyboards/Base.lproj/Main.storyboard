@@ -90,7 +90,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fTd-iZ-4xL">
-                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="IQg-Y2-iyw">
+                        <barButtonItem key="rightBarButtonItem" title="My Favorites" id="IQg-Y2-iyw">
                             <color key="tintColor" name="black"/>
                             <connections>
                                 <action selector="favoritesButtonWasPressed:" destination="BYZ-38-t0r" id="VHv-Fr-Imc"/>

@@ -21,6 +21,7 @@ class SearchViewModel {
     private var page = 1
     private var searchString = ""
     
+    //MARK: - Helper Methods
     func initialize() {
         session.cancelRequest(withURL: API.movies)
         searchString = ""
@@ -40,6 +41,7 @@ class SearchViewModel {
         return moviesList
     }
     
+    //MARK: - APIs
     private func fetchMovies() {
         let url = API.search + "&page=" + "\(page)" + "&query=" + searchString
         APIGeneric<GetPopularMoviesResponseModel>.fetchRequest(apiURL: url) { [weak self]
@@ -59,6 +61,7 @@ class SearchViewModel {
         }
     }
     
+    //MARK: - Pagination Logic
     private func skipTakeImplementation(responseArray: [MovieModel]) {
         if self.moviesList.count > 0 && self.page != 1 {
             for obj in responseArray {

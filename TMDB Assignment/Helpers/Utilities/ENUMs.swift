@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum RequestType:String {
+    case post   = "POST"
+    case get    = "GET"
+    case delete = "DELETE"
+}

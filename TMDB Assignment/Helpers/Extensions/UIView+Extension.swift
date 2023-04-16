@@ -19,11 +19,6 @@ extension UIView {
         }
     }
     
-    func simpleRound(){
-        layer.cornerRadius = frame.height/2
-        clipsToBounds = true
-    }
-    
     func roundedUIView(withRadius radius: CGFloat){
         layer.cornerRadius = radius
         clipsToBounds = true

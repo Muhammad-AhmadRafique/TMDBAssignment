@@ -28,31 +28,15 @@ struct MovieModel: Codable {
     let originalTitle, overview: String?
     let posterPath, releaseDate, title: String?
     var isFavorite: Bool?
-//    let video: Bool?
-//    let voteAverage: Double?
-//    let voteCount: Int?
 
     enum CodingKeys: String, CodingKey {
-//        case adult
         case backdropPath = "backdrop_path"
-//        case genreIDS = "genre_ids"
         case id
-//        case originalLanguage = "original_language"
         case originalTitle = "original_title"
         case overview
-//        case popularity
         case posterPath = "poster_path"
         case releaseDate = "release_date"
         case title
         case isFavorite
-//        case video
-//        case voteAverage = "vote_average"
-//        case voteCount = "vote_count"
     }
 }
-
-//enum OriginalLanguage: String, Codable {
-//    case en = "en"
-//    case es = "es"
-//    case ko = "ko"
-//}

@@ -77,11 +77,7 @@ struct K {
 }
 
 struct Alerts {
-    
-}
-
-extension Notification.Name {
-//    static let NETWORK_ARRIVE = NSNotification.Name.init(rawValue: "networkArrive")
+    static let NO_RESULT_FOUND = "No result found...!"
 }
 
 struct DateFormats {
@@ -99,8 +95,4 @@ struct DateFormats {
     static let MY_CARDS_DATE_FORMAT = "MMM dd, yyyy - hh:mm a"
     static let EN_US_POSIX = Locale(identifier: "en_US_POSIX")
     static let UTC_TIME_ZONE = TimeZone(abbreviation: "UTC")
-}
-
-struct UserDefaultKeys {
-    
 }

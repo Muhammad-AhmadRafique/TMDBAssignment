@@ -16,11 +16,6 @@ struct CustomError: LocalizedError {
     }
 }
 
-struct NotSuccessModel:Codable {
-    let isError: Bool
-    let messages: String?
-}
-
 
 // MARK: - ErrorModel
 struct APIErrorModel: Codable {

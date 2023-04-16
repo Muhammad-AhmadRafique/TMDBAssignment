@@ -30,6 +30,7 @@ class FavoriteMoviesViewController: UIViewController {
     
 }
 
+//MARK: - UITableView Delegates
 extension FavoriteMoviesViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return moviesList.count

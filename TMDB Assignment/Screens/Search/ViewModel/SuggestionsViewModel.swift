@@ -13,6 +13,7 @@ class SuggestionsViewModel {
     private var isSuggestionEnabled = false
     private var suggestionsList = [String]()
     
+    //MARK: - Helper Methods
     func initialize() {
         suggestionsList = LocalDB.shared.getSuggestionList()
     }

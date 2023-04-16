@@ -14,6 +14,7 @@ class LocalDB {
     private var favoritesList = [MovieModel]()
     private var suggestionsList = [String]()
     
+    //MARK: - Private Constructor to initialize DB lists
     private init() {
         
         if let moviesListModel = FavoriteMoviesListDB.instance.fetchData() {
@@ -27,7 +28,7 @@ class LocalDB {
 
 }
 
-//MARK: - Favorite Movies
+//MARK: - Favorite Movies DB Handling
 
 extension LocalDB {
     func markFavorite(model: MovieModel) {
@@ -79,7 +80,7 @@ extension LocalDB {
    }
 }
 
-//MARK: - Suggestions
+//MARK: - Suggestions DB Handling
 extension LocalDB {
     func getSuggestionList() -> [String] {
         return suggestionsList

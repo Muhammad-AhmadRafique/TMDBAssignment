@@ -19,7 +19,7 @@ class SearchViewController: UIViewController, SearchViewModelDelegate {
     // MARK: - View Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Favorites"
+        navigationItem.title = "Search"
 
         tableView.register(UINib(nibName: FavoriteMoviesListTableViewCell.className, bundle: nil), forCellReuseIdentifier: FavoriteMoviesListTableViewCell.className)
         tableView.register(UINib(nibName: SuggestionsTableViewCell.className, bundle: nil), forCellReuseIdentifier: SuggestionsTableViewCell.className)
@@ -88,7 +88,7 @@ extension SearchViewController : UISearchBarDelegate {
         searchBar.resignFirstResponder()
         let searchBarText = searchBar.text ?? ""
         if viewModel.getMoviesList().count == 0 && !searchBarText.isEmpty {
-            alertMessage(title: K.ERROR, alertMessage: "No result found...!", action: nil)
+            alertMessage(title: K.ERROR, alertMessage: Alerts.NO_RESULT_FOUND, action: nil)
         } else {
             suggestionViewModel.addSuggesion(str: searchbar.text)
         }

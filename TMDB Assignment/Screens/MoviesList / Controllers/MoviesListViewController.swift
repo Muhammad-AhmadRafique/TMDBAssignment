@@ -32,6 +32,11 @@ class MoviesListViewController: UIViewController {
         super.viewWillAppear(animated)
         collectionView.reloadData()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
         
     //MARK: - IBActions
     @IBAction func favoritesButtonWasPressed(_ sender: Any) {
